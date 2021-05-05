@@ -6,6 +6,7 @@ import { Wrapper, SomeWrapper, TableRow, TableCell } from "../ui";
 import ReactDataSheet from "react-datasheet";
 import "react-datasheet/lib/react-datasheet.css";
 
+var chaine= "https:/node-excel.herokuapp.com";
 const TableExcel = () => {
   //récupération des données depuis notre API une fois la page load
   useEffect(() => {
@@ -34,7 +35,7 @@ const TableExcel = () => {
 
   const getData = async () => {
     await axios
-      .get("http://localhost:5000/api/students")
+      .get(chaine+"/api/students")
       .then((res) => {
         setGrid(res.data);
       })
